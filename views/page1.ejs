@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <style>
+        :root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray:rgb(104,105,108);
+    /* --gray: #6c757d; */
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: rgb(108,202,203);
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+        }
+
+        body{
+            background-color: rgb(25,29,40);
+            /* font-family: Oswald,sans-serif;
+             */
+             font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+            /* color:var(--info); */
+            /* font-weight:600; */
+            /* font-stretch: narrower; */
+            /* line-height: ; */
+        }
+
+        #header{
+            position: relative;
+           padding: 30px;
+            display: flex;
+            /* justify-content: baseline; */
+            align-items: baseline;
+           
+        }
+
+        #logo-div{
+            display: flex;
+            flex-direction: column;
+            width:42%;
+        }
+        
+        #logo{
+            width:40%;
+        }
+        #op-div{
+            display: flex;
+            justify-content:space-evenly;
+        }
+
+        .option{
+            margin:0px 5px;
+            background-color: rgb(46,50,65);
+            color: white;
+            /* width:90px; */
+            /* display: inline; */
+            padding:10px 20px;
+            border-radius: 10px;
+            height: 25px;
+        }
+        #connect-div{   
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        #connect-body{
+            color: white;
+            background-color: var(--info);
+            /* height:20px; */
+            border-radius: 10px;
+            padding: 5px 15px; 
+        }
+        #connect-div div{
+            padding:8px 15px;
+        }
+        #info{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
+        }
+
+        #info h2{
+            color:var(--gray);
+        }
+
+        #info-cont{
+            display: flex;
+        }
+        #info-cont .r1{
+            font-size:3vw;
+            color: var(--info);
+        }
+
+        #info-cont .r2{
+            font-size: 2vw;
+            color: var(--gray);
+        }
+
+        #info .ic-op{
+            width:15%;
+            display: flex;
+            flex-direction: column;
+            height:50px;
+            padding: 10px;
+        }
+        #info .ic-op-sp{
+            width:40%;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        #info-footer{
+            font-size: 1vw;
+            color: var(--gray);
+            margin: 0px auto;
+        }
+        #banner{
+            margin-top:50px;
+            display: flex;
+            /* justify-items: center; */
+            justify-content: center;
+        }
+        #btm-banner{
+            margin-top:30px;
+            margin-bottom: 30px;
+            display: flex;
+            /* justify-items: center; */
+            justify-content: center;
+        }
+
+        #table{
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            overflow-x: scroll;
+        }
+
+        #table table{
+            width: 98%;
+            font-size: 25px;
+            text-align: center;
+            border: none;
+            /* border-collapse: collapse; */
+            border-collapse: separate;
+            border-spacing: 0 1em;
+            /* table-layout:auto; */
+            /* text-overflow:clip ; */
+        }
+        thead{
+            color: var(--gray);
+        }
+        tbody{
+            color:white;
+        }
+        tbody tr{
+            background-color: rgb(46,50,65);
+            border-radius: 10px;
+            padding: 50px;     
+        }
+
+        tr td:first-child{
+            border-radius: 10px 0px 0px 10px;
+        }
+
+        tr td:last-child{
+            border-radius:  0px 10px 10px 0px;
+        }
+        #footer{
+            border-top: 1px solid gray;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            color:var(--gray);
+            padding-bottom: 60px;
+        }
+        #footer span{
+            padding-left: 10px;
+        }
+
+
+
+        @media screen and (max-width:1250px){
+            #logo-div{
+                width:40%;
+            }
+            #logo{
+                width:80%;
+            }
+        }
+
+        @media screen and (max-width:850px){
+
+            #header{
+                flex-direction: column;
+                align-items: center;
+                font-size: small;
+                padding:30px 20px;
+                margin-bottom: -80px;
+            }
+            #header div{
+                margin-bottom: 20px;
+            }
+            #logo-div{
+                width: 100%;
+                align-items: center;
+            }
+            #connect-div{
+                margin-left:0%;
+            }
+            #table table{
+                font-size: small;
+            }
+            #timer{
+                width:40px;
+            }
+            #btn{
+                width:50px;
+            }
+            #info-footer{
+                font-size: 3vw;
+                width:40%;
+                text-align: center;
+            }
+            #info{
+                margin-bottom: -40px;
+            }
+           
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="logo-div">
+            <img src="logo.png" alt="logo" srcset="" id="logo">
+            <div id="logo-footer" style="color: var(--gray)">
+                Powered By <span style="color:var(--info)">Finstreet</span>
+            </div>
+        </div>
+    
+        <div id="op-div">
+            <div class="option">INR▼</div>
+            <div class="option">BTC▼</div>
+            <div class="option">BUY BTC</div>
+        </div>
+    
+        <div id="connect-div">
+            <div> <img src="timer.png" alt="" id="timer"></div>
+            <div id ="connect-body">
+                <i class="fa fa-telegram" aria-hidden="true" style="color:white ;background: var(--info);padding-right: 10px;" ></i>
+                <span>Connect Telegram</span>
+            </div> 
+            <div>
+                <img src="btn.png" alt="" id="btn">
+            </div>
+        </div>
+    </div>
+   <div id="info">
+        <h2>Best Price to Trade</h2>
+        <div id="info-cont">
+            <div class="ic-op">
+                <div class="r1">
+                    0.58%
+                </div>
+                <div class="r2">
+                    5 min
+                </div>
+            </div>
+            <div class="ic-op">
+                <div class="r1">
+                    0.58%
+                </div>
+                <div class="r2">
+                    5 min
+                </div>
+            </div>
+            <div class="ic-op-sp">
+                <div style="color:white; font-size: 5vw;">
+                    ₹ 27,45,119
+                </div>
+            </div>
+            <div class="ic-op">
+                <div class="r1">
+                    0.58%
+                </div>
+                <div class="r2">
+                    5 min
+                </div>
+            </div>
+            <div class="ic-op">
+                <div class="r1">
+                    0.58%
+                </div>
+                <div class="r2">
+                    5 min
+                </div>
+            </div>
+           
+        </div>
+        <div id="info-footer">
+            Average BTC/INR net price including commission
+        </div> 
+   </div>
+   <div id="banner">
+       <img src="banner.png" alt="banner" style="width:97%">
+   </div>
+
+   <div id="table">
+       <table>
+           <thead>
+            <tr>
+                <td>#</td>
+                <td>name</td>
+                <td>last</td>
+                <td>Buy / Sell Price</td>
+                <td>Volume</td>
+                <td>base_unit</td>
+            </tr>
+           </thead>
+           <tbody>
+            <% for(let i=0;i<data.length;i++){ %> 
+            <tr>
+                <td><%- i+1 %> </td>
+                <td><%- data[i].name %> </td>
+                <td>₹<%- data[i].last %></td>
+                <td>₹<%- data[i].buy %> / ₹<%- data[i].sell %></td>
+                <td><%- data[i].volume %></td>
+                <td><%- data[i].baseunit %></td>
+            </tr>
+            <% } %> 
+            
+           </tbody>
+       </table>
+   </div>
+
+   <div id="btm-banner">
+    <img src="banner2.jpg" alt="banner" style="width:99%">
+    </div>
+
+    <div id="footer">
+        <span>Copyright © 2019</span>
+        <span>HodlInfo.com</span>
+        <span>Developed By <b style="color:var(--info)">QuadBTech</b></span>
+        <span style="float:right">Support</span>
+    </div>
+</body>
+</html>
